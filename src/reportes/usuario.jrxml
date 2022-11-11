@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bbf031b6-9443-4e36-84c3-1f4cae9cca4f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[select * from usuario]]>
+	</queryString>
+	<field name="ID_user" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="User" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="correo_electronico" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Password" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_rol" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="6c452fd6-801a-45cc-aa9b-a21b7f57c62e"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[USUARIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="117" y="46" width="157" height="22" uuid="e1bb4e53-f3c1-4c2f-abd4-0076059d96ff"/>
+				<text><![CDATA[Celucell]]></text>
+			</staticText>
+			<image>
+				<reportElement x="293" y="0" width="220" height="128" uuid="95090de5-5492-4d6e-8ca9-0cbe63bbf006"/>
+				<imageExpression><![CDATA["C:\\Users\\Caroline Jimenez\\OneDrive\\Documentos\\NetBeansProjects\\loginusuario\\src\\reportes\\logo celucel1.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="60" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="8b53cc72-a08f-460c-a001-b63f10d38941"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="17" width="67" height="17" forecolor="#CC0000" uuid="95013202-8532-4d14-b7ea-2739bfac08e7"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="14"/>
+				</textElement>
+				<text><![CDATA[ID_user]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="79" y="19" width="89" height="17" forecolor="#CC66FF" uuid="c82ce093-d6d7-42c0-9854-0900cc80c5f7"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="14"/>
+				</textElement>
+				<text><![CDATA[nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="168" y="19" width="109" height="17" forecolor="#0033FF" uuid="d331a114-4d79-422c-96ea-1bead1fba638"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="14"/>
+				</textElement>
+				<text><![CDATA[User]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="258" y="18" width="147" height="17" forecolor="#660066" uuid="16683693-622f-41e5-a75a-de300ec98e54"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="14"/>
+				</textElement>
+				<text><![CDATA[correo_electronico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="405" y="18" width="75" height="19" forecolor="#009933" uuid="61fd98d9-b4dc-4bf4-9324-e5b56008a29c"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="14"/>
+				</textElement>
+				<text><![CDATA[Password]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="497" y="16" width="58" height="19" forecolor="#FFCC99" uuid="30996322-e3c4-4dee-b3b5-86f3fb1052ec"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="14"/>
+				</textElement>
+				<text><![CDATA[id_rol]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="5e259f73-2e85-43af-bd76-746059a57d6e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="92" height="15" uuid="bbbd4a23-b755-40c5-aa76-bfabe8c12c59"/>
+				<textFieldExpression><![CDATA[$F{ID_user}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="92" y="0" width="92" height="15" uuid="576fe0d5-7d39-4a9a-9fbc-bf47a8bee9c4"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="184" y="0" width="92" height="15" uuid="436929a3-c9d9-423b-8af7-5e76f497b82f"/>
+				<textFieldExpression><![CDATA[$F{User}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="263" y="1" width="128" height="15" uuid="a9112cd3-cd5b-49d0-835e-5588d567f17a"/>
+				<textFieldExpression><![CDATA[$F{correo_electronico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="400" y="1" width="80" height="15" uuid="d18fef87-2c7e-4a1b-ade5-cbfdd09886e7"/>
+				<textFieldExpression><![CDATA[$F{Password}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="497" y="0" width="56" height="15" uuid="d6962c13-3f6f-48f7-9da7-f68609d31471"/>
+				<textFieldExpression><![CDATA[$F{id_rol}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="8c64dbff-6452-4f6e-b8f0-c49d0b3e6396"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="206" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="e721f670-f895-4964-a965-b9d0d14d242e"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="7c8dca2c-3457-4007-9664-76283767b77f"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="962c4348-9049-4ef7-8ef7-dfc37edbc6e7"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

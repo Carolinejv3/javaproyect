@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1ba821f9-60f7-4c9e-a4ee-1c3f0ba33b7d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="factu" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     detalle_ventas.`Codigo` AS detalle_ventas_Codigo,
+     detalle_ventas.`nombre` AS detalle_ventas_nombre,
+     detalle_ventas.`precio` AS detalle_ventas_precio,
+     detalle_ventas.`cantidad` AS detalle_ventas_cantidad,
+     detalle_ventas.`monto_pro` AS detalle_ventas_monto_pro,
+     ventas.`ID_ventas` AS ventas_ID_ventas,
+     ventas.`total` AS ventas_total,
+     ventas.`facturado_por` AS ventas_facturado_por,
+     ventas.`fecha_venta` AS ventas_fecha_venta
+FROM
+     `detalle_ventas` detalle_ventas,
+     `ventas` ventas
+
+		where ventas.ID_ventas = $P{factu} and detalle_ventas.ID_ventas = $P{factu}]]>
+	</queryString>
+	<field name="detalle_ventas_Codigo" class="java.lang.Integer"/>
+	<field name="detalle_ventas_nombre" class="java.lang.String"/>
+	<field name="detalle_ventas_precio" class="java.lang.String"/>
+	<field name="detalle_ventas_cantidad" class="java.lang.Integer"/>
+	<field name="detalle_ventas_monto_pro" class="java.lang.String"/>
+	<field name="ventas_ID_ventas" class="java.lang.Integer"/>
+	<field name="ventas_total" class="java.lang.String"/>
+	<field name="ventas_facturado_por" class="java.lang.String"/>
+	<field name="ventas_fecha_venta" class="java.sql.Timestamp"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="138" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="15" y="71" width="136" height="50" uuid="e3730c08-33c6-4af0-a67a-133c9250032d"/>
+			</rectangle>
+			<staticText>
+				<reportElement style="Title" x="13" y="12" width="147" height="44" uuid="059d13f0-7400-4196-822a-62923a42e085"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="32"/>
+				</textElement>
+				<text><![CDATA[Factura]]></text>
+			</staticText>
+			<image>
+				<reportElement x="333" y="0" width="220" height="128" uuid="dabecab2-fdd5-46e0-95b3-8bff01605f04"/>
+				<imageExpression><![CDATA["C:\\Users\\Caroline Jimenez\\OneDrive\\Documentos\\NetBeansProjects\\loginusuario\\src\\reportes\\logo celucel1.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="27" y="79" width="109" height="27" uuid="afee8d37-ec44-4bba-8bb1-13bb69c38de5"/>
+				<textElement>
+					<font fontName="Monospaced" size="14"/>
+				</textElement>
+				<text><![CDATA[No. factura]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="65" y="106" width="61" height="15" uuid="2e79f348-989c-496d-93ad-b8d5b15bd300"/>
+				<textFieldExpression><![CDATA[$F{ventas_ID_ventas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="49" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="f1ba43b2-e90d-4c92-a83b-c45d439a9e2d"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="4" width="126" height="37" forecolor="#6666FF" uuid="d0304ae8-705e-4d2e-8f3b-ebbb41487697"/>
+				<textElement>
+					<font fontName="Monospaced" size="24"/>
+				</textElement>
+				<text><![CDATA[Artículo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="151" y="4" width="142" height="32" forecolor="#6666FF" uuid="8aed0685-669c-4eeb-b166-94862f1f5ada"/>
+				<textElement>
+					<font fontName="Monospaced" size="24"/>
+				</textElement>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="289" y="0" width="144" height="32" forecolor="#6666FF" uuid="21231819-97db-4f8a-b215-9106440c7f21"/>
+				<textElement>
+					<font fontName="Monospaced" size="24"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="456" y="4" width="114" height="32" forecolor="#6666FF" uuid="fab7af04-07b1-4021-a9af-d233d04dd35d"/>
+				<textElement>
+					<font fontName="Monospaced" size="24"/>
+				</textElement>
+				<text><![CDATA[Monto]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<textField>
+				<reportElement style="Detail" x="0" y="3" width="111" height="27" uuid="c33b4776-a88f-4eac-83a3-036d1f8094db"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detalle_ventas_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="147" y="0" width="154" height="27" uuid="2f678849-7e52-4336-af43-33d3cf350159"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detalle_ventas_precio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="289" y="3" width="125" height="27" uuid="89fa5e81-f651-4b11-8d1b-cb297a9c3674"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detalle_ventas_cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="456" y="0" width="80" height="27" uuid="e1572010-b68a-4d47-83a0-8e63611afb5f"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detalle_ventas_monto_pro}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="107" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="8cadb66a-f568-4795-b9bb-66891c61408c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="301" y="76" width="92" height="31" forecolor="#FF9933" uuid="b166b9b8-b2ce-4605-a405-1958441ed334"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="20"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="365" y="76" width="95" height="25" uuid="6f7cbddd-666f-4d7a-b18d-e1485cdd9db8"/>
+				<textElement>
+					<font fontName="Monospaced" size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ventas_total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="0" y="74" width="126" height="27" forecolor="#990000" uuid="e507940c-72d7-40f0-bbac-71837e788ecc"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="20"/>
+				</textElement>
+				<text><![CDATA[Le atendió:]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="111" y="76" width="75" height="25" uuid="a1b38935-e462-4408-ab36-183f3ff0edb4"/>
+				<textElement>
+					<font fontName="Monospaced" size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ventas_facturado_por}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Title" x="4" y="42" width="107" height="32" forecolor="#99FF33" uuid="cef4e7fd-907f-46e5-be80-082eb9697c4e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="20"/>
+				</textElement>
+				<text><![CDATA[Contacto:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="111" y="48" width="123" height="26" uuid="0dbe43b9-b79b-4ded-aa2d-a55e9971c556"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="16"/>
+				</textElement>
+				<text><![CDATA[829-649-4169]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="301" y="42" width="107" height="32" forecolor="#FF6633" uuid="9ba692a6-a84f-4d01-b12d-3705226c4a55"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="20"/>
+				</textElement>
+				<text><![CDATA[Gmail:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="365" y="42" width="190" height="26" uuid="29b161f5-4c1e-4c4c-9813-485cec7d1787"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="16"/>
+				</textElement>
+				<text><![CDATA[Celucell@gmail.com]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="2b57f553-29cf-478d-beef-494efe075118"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="6af85dd9-9b72-4e57-8997-036df1d271fb"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="f5f51826-e08e-4ed1-aca8-876a8e5d8a19"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
